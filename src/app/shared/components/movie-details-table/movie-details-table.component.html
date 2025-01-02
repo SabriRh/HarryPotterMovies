@@ -1,0 +1,24 @@
+<h2>Details</h2>
+<table>
+    <tr>
+        <td><strong>Box office</strong></td>
+        <td>{{ movieDetails.box_office | budget }}</td>
+    </tr>
+    <tr>
+        <td><strong>Budget</strong></td>
+        <td>{{ movieDetails.budget | budget }}</td>
+    </tr>
+    <tr>
+        <td><strong>Duration</strong></td>
+        <td>{{ movieDetails.duration | duration }}</td>
+    </tr>
+
+    <tr>
+        <td><strong>Producers</strong></td>
+        <td>{{ movieDetails.producers }}</td>
+    </tr>
+    <tr>
+        <td><strong>Cinematographers</strong></td>
+        <td>{{ movieDetails.cinematographers }}</td>
+    </tr>
+</table>

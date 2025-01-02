@@ -1,0 +1,19 @@
+<div [formGroup]="filtersForm" class="filters-container">
+  <label for="title-filter">Title</label>
+  <input
+    id="title-filter"
+    type="text"
+    formControlName="title"
+    placeholder="Filter by title"
+  />
+
+  <label for="year-filter">Release Year</label>
+  <input
+    id="year-filter"
+    type="number"
+    formControlName="releaseYear"
+    placeholder="Filter by release year"
+  />
+
+  <button (click)="clearFilters()">Clear Filters</button>
+</div>

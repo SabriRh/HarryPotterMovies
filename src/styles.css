@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/mini.css/dist/mini-dark.min.css";
+@import "../node_modules/mini.css/dist/mini-default.min.css";
+
+button {
+  background-color: #8e7d9f;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #40285a;
+}

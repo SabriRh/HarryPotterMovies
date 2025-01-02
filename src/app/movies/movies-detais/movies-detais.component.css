@@ -1,0 +1,30 @@
+.movie-details {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-button {
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.summary {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.movie-poster {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}

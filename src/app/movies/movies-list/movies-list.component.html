@@ -1,0 +1,25 @@
+<div class="movies-list-container">
+  <div class="filters-bloc">
+    <app-movies-filters (filtersChanged)="applyFilters($event)"></app-movies-filters>
+  </div>
+  <div class="movies-list-bloc">
+    <ng-container *ngIf="loader(); else moviesContent">
+      <div class="loader">
+        <div class="loader__filmstrip">
+        </div>
+        <p class="loader__text">
+          loading
+        </p>
+      </div>
+    </ng-container>
+    <ng-template #moviesContent>
+      <ng-container *ngIf="filteredMovies().length; else noMovies">
+        <app-movie-card *ngFor="let movie of filteredMovies(); trackBy: trackByMovieId"
+          [movie]="movie"></app-movie-card>
+      </ng-container>
+      <ng-template #noMovies>
+        <h3>No movies found !</h3>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>

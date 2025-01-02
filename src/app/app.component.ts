@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { MoviesService } from './core/services/movies.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,6 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
+
 })
-export class AppComponent {
-  title = 'harry-potter-movies';
-}
+export class AppComponent { }

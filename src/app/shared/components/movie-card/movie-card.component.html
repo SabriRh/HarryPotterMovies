@@ -1,0 +1,12 @@
+<div class="movie-card">
+  <div class="movie-info">
+    <h3>{{ movie.title }}</h3>
+    <p>
+      Release date: {{ movie.release_date }} &nbsp; | &nbsp; Budget:
+      {{ movie.budget | budget }} &nbsp; | &nbsp; Duration: {{ movie.duration | duration }}
+    </p>
+  </div>
+  <button [routerLink]="['/movies/' + movie.id]" class="details-button">
+    🎥 Details
+  </button>
+</div>

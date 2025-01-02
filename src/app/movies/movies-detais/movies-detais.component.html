@@ -1,0 +1,13 @@
+<div class="movie-details">
+  <button class="back-button" [routerLink]="['/movies']">
+    &#8962; Back
+  </button>
+
+  <h1>{{ movieDetails.title }}</h1>
+  <div class="summary">
+    <img [src]="movieDetails.poster" alt="{{ movieDetails.title }}" class="movie-poster" />
+    <p><strong>Summary:</strong> {{ movieDetails.summary }}</p>
+  </div>
+
+  <app-movie-details-table [movieDetails]="movieDetails"></app-movie-details-table>
+</div>
