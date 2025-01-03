@@ -217,11 +217,15 @@ const handlers = [
     ]);
   }),
 ];
+// to register mws both on local & github pages
+const serviceWorkerUrl = window.location.hostname === 'sabrirh.github.io'
+  ? '/HarryPotterMovies/mockServiceWorker.js'
+  : '/mockServiceWorker.js';
 
 setupWorker(...handlers).start(
   {
     serviceWorker: {
-      url: environment.baseUrl + '/mockServiceWorker.js',
+      url: serviceWorkerUrl,
     },
   }
 )

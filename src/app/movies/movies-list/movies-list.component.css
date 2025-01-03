@@ -7,6 +7,11 @@
   margin: 30px auto 0 auto;
 }
 
+h3 {
+  text-align: center;
+  margin-top: 30%;
+}
+
 .loader {
   top: 40vh;
   right: 40vw;
