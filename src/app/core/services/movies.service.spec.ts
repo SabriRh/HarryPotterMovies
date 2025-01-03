@@ -33,7 +33,7 @@ describe('MoviesService', () => {
     ];
 
     service.loadMovies();
-    const req = httpMock.expectOne(`${environment.apiUrl}/movies`);
+    const req = httpMock.expectOne(`${environment.baseUrl}/movies`);
     expect(req.request.method).toBe('GET');
     req.flush(mockMovies);
 
@@ -66,7 +66,7 @@ describe('MoviesService', () => {
       expect(movieDetails).toEqual(mockMovieDetails);
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/movies/1`);
+    const req = httpMock.expectOne(`${environment.baseUrl}/movies/1`);
     expect(req.request.method).toBe('GET');
     req.flush(mockMovieDetails);
   });

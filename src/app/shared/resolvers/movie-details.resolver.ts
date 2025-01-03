@@ -13,9 +13,13 @@ export class MovieDetailsResolver {
 
   constructor(private moviesService: MoviesService) { }
 
+  /**
+   * Resolve movie details based on movieId from route params
+   * @param route 
+   * @returns Observable<MovieDetails>
+   */
   resolve: ResolveFn<MovieDetails> = (
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    route: ActivatedRouteSnapshot
   ): Observable<MovieDetails> => {
     const movieId = route.paramMap.get('movieId');
     return this.moviesService.getMovieDetails(movieId!).pipe(takeUntilDestroyed(this.#destroyRef));

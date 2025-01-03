@@ -10,8 +10,8 @@ describe('MoviesFiltersComponent', () => {
     await TestBed.configureTestingModule({
       imports: [MoviesFiltersComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(MoviesFiltersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,13 +1,23 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>HarryPotterMovies</title>
-  <base href="/">
+  <title>Harry Potter Movies 🎬</title>
+  <script>
+    // change baseUrl based on the environment
+    var baseHref = '/';
+    if (window.location.hostname === 'sabrirh.github.io') {
+      baseHref = '/HarryPotterMovies/';
+    }
+    document.write('<base href="' + baseHref + '">');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+
 </html>

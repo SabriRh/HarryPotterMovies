@@ -7,6 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class DurationPipe implements PipeTransform {
 
   transform(value: string): string {
+    // check if value could be converted to number, else return empty string
     return !isNaN(Number(value)) ? this.transformMinute(Number(value)) : '';
   }
 

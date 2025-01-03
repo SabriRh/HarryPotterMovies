@@ -1,4 +1,4 @@
-import { Component, Input, input, Signal } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { Movie } from '../../models/movie.model';
 import { BudgetPipe } from "../../pipes/budget.pipe";
@@ -9,8 +9,12 @@ import { DurationPipe } from '../../pipes/duration.pipe';
   standalone: true,
   imports: [RouterModule, BudgetPipe, DurationPipe],
   templateUrl: './movie-card.component.html',
-  styleUrl: './movie-card.component.css'
+  styleUrls: ['./movie-card.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MovieCardComponent {
+  /**
+   * Movie to display
+   */
   @Input() movie!: Movie;
 }

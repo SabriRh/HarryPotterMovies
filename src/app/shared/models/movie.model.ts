@@ -1,3 +1,4 @@
+// Model for Movie
 export interface Movie {
     id: string;
     title: string;
@@ -5,7 +6,7 @@ export interface Movie {
     duration: string;
     budget: string;
 }
-
+// extanded model for Movie Details
 export interface MovieDetails extends Movie {
     poster: string;
     summary: string;

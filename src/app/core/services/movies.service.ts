@@ -13,7 +13,7 @@ export class MoviesService {
   #destroyRef = inject(DestroyRef);
 
   // Endpoint config
-  private apiUrl = `${environment.apiUrl}/movies`;
+  private apiUrl = `${environment.baseUrl}/movies`;
 
   // movies signal
   private movies = signal<Movie[]>([]);
@@ -31,11 +31,14 @@ export class MoviesService {
       return matchesTitle && matchesReleaseYear;
     });
   });
-  // movies signal
+  // loader signal
   loader = signal<boolean>(true);
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Load movies from API and update movies & loader signals
+   */
   loadMovies(): void {
     this.http.get<Movie[]>(this.apiUrl)
       .pipe(takeUntilDestroyed(this.#destroyRef))
@@ -45,10 +48,19 @@ export class MoviesService {
       });
   }
 
+  /**
+   * update filters signal
+   * @param newFilters : MovieFilters
+   */
   updateFilters(newFilters: MovieFilters): void {
     this.filters.set(newFilters);
   }
 
+  /**
+   * get movie details by movieId
+   * @param movieId : string
+   * @returns Observable<MovieDetails>
+   */
   getMovieDetails(movieId: string): Observable<MovieDetails> {
     return this.http.get<MovieDetails>(`${this.apiUrl}/${movieId}`)
   }
